@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%" style="background-color: #f0f2f5; font-family: 'Segoe UI', system-ui, sans-serif;">
+  <defs>
+    <filter id="ad-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Feed Card -->
+  <g transform="translate(50, 30)" filter="url(#ad-shadow)">
+    <rect x="0" y="0" width="500" height="640" rx="12" fill="#ffffff" stroke="#e4e6eb" />
+
+    <!-- Top Account Bar -->
+    <circle cx="36" cy="36" r="18" fill="#1877f2" />
+    <text x="36" y="42" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">W</text>
+    <text x="66" y="32" font-size="14" font-weight="bold" fill="#050505">Wantace Factory OS</text>
+    <text x="66" y="48" font-size="11" fill="#65676b">Sponsored • 🌐</text>
+    <text x="465" y="35" font-size="16" fill="#65676b">•••</text>
+
+    <!-- Primary Text (Hinglish - Direct to Suresh) -->
+    <g transform="translate(20, 75)" font-size="13.5" fill="#050505">
+      <text x="0" y="0">"Customer phone karta hai toh mujhe supervisor ko call karna</text>
+      <text x="0" y="20">padta hai... aur supervisor bolta hai diary floor pe hai."</text>
+      <text x="0" y="48" fill="#4b5563">Diwali season mein agar aapka maal polishing ya dispatch mein</text>
+      <text x="0" y="68" fill="#4b5563">atka hai, toh WhatsApp aur diary ke bharose factory mat chalaiye.</text>
+      <text x="0" y="96" font-weight="bold" fill="#1877f2">Subah bas phone kholiye aur 1 tap mein dekhiye kaunsa order kahan hai.</text>
+    </g>
+
+    <!-- Visual Creative: Split Screen Contrast -->
+    <g transform="translate(15, 195)">
+      <rect x="0" y="0" width="470" height="280" rx="8" fill="#0f172a" />
+      
+      <!-- Left Half: The Old Way (Diary Chaos) -->
+      <rect x="10" y="10" width="220" height="260" rx="6" fill="#1e293b" />
+      <rect x="18" y="18" width="80" height="20" rx="3" fill="#ef4444" />
+      <text x="24" y="32" font-size="10" font-weight="bold" fill="#fff">PURANA TARIKA</text>
+      
+      <circle cx="120" cy="85" r="32" fill="#334155" />
+      <text x="120" y="93" font-size="30" text-anchor="middle">📓❌</text>
+      
+      <text x="24" y="145" font-size="12" font-weight="bold" fill="#fca5a5">• Diary floor pe kho gayi</text>
+      <text x="24" y="165" font-size="12" font-weight="bold" fill="#fca5a5">• Munshi ji ne payment hold kiya,</text>
+      <text x="32" y="180" font-size="11" fill="#fca5a5">floor ko pata hi nahi</text>
+      <text x="24" y="200" font-size="12" font-weight="bold" fill="#fca5a5">• Karigar ka shortage gayab</text>
+      <text x="24" y="225" font-size="11" fill="#94a3b8">"Din ke 2 ghante call pe barbad"</text>
+
+      <!-- Right Half: The Wantace Phone View -->
+      <rect x="240" y="10" width="220" height="260" rx="6" fill="#1e1e38" stroke="#38bdf8" stroke-width="1.5" />
+      <rect x="248" y="18" width="90" height="20" rx="3" fill="#10b981" />
+      <text x="254" y="32" font-size="10" font-weight="bold" fill="#fff">PHONE PE CLARITY</text>
+      
+      <!-- Mini Phone Card -->
+      <rect x="250" y="50" width="200" height="42" rx="4" fill="#0f172a" stroke="#334155" />
+      <text x="260" y="68" font-size="11" font-weight="bold" fill="#ffffff">Sharma Bartan (Karnal)</text>
+      <rect x="380" y="58" width="60" height="16" rx="3" fill="#ef4444" />
+      <text x="385" y="70" font-size="9" fill="#fff" font-weight="bold">HOLD: ₹1.8L</text>
+      <text x="260" y="84" font-size="9" fill="#94a3b8">30 Doz Gilas • Polishing Ready</text>
+
+      <rect x="250" y="100" width="200" height="42" rx="4" fill="#0f172a" stroke="#334155" />
+      <text x="260" y="118" font-size="11" font-weight="bold" fill="#ffffff">Bansal &amp; Sons (Rohtak)</text>
+      <rect x="380" y="108" width="60" height="16" rx="3" fill="#f59e0b" />
+      <text x="385" y="120" font-size="9" fill="#fff" font-weight="bold">IN POLISH</text>
+      <text x="260" y="134" font-size="9" fill="#94a3b8">120 pcs Tope • Karigar Pappu</text>
+
+      <rect x="250" y="150" width="200" height="42" rx="4" fill="#0f172a" stroke="#334155" />
+      <text x="260" y="168" font-size="11" font-weight="bold" fill="#ffffff">Mehra Kitchenware</text>
+      <rect x="380" y="158" width="60" height="16" rx="3" fill="#10b981" />
+      <text x="385" y="170" font-size="9" fill="#fff" font-weight="bold">DISPATCHED</text>
+      <text x="260" y="184" font-size="9" fill="#94a3b8">Partly 180 pcs sent via Tempo</text>
+
+      <rect x="250" y="202" width="200" height="28" rx="4" fill="#0284c7" />
+      <text x="350" y="220" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Daily Morning Pulse ✓</text>
+    </g>
+
+    <!-- Bottom CTA Bar -->
+    <g transform="translate(20, 490)">
+      <rect x="0" y="0" width="460" height="75" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+      <text x="15" y="24" font-size="11" fill="#64748b" text-transform="uppercase">WANTACE.COM/FACTORY-PILOT</text>
+      <text x="15" y="44" font-size="15" font-weight="bold" fill="#0f172a">Diwali Se Pehle Floor Ka Control Apne Haath Mein Lein</text>
+      <text x="15" y="62" font-size="12" fill="#64748b">No Heavy Software. Works directly on mobile for supervisor &amp; owner.</text>
+      
+      <!-- CTA Button -->
+      <rect x="350" y="18" width="98" height="38" rx="6" fill="#1877f2" />
+      <text x="399" y="42" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">Book Demo</text>
+    </g>
+
+    <!-- Social Proof / Footer -->
+    <g transform="translate(20, 580)">
+      <line x1="0" y1="0" x2="460" y2="0" stroke="#f0f2f5" stroke-width="1.5" />
+      <text x="5" y="24" font-size="11.5" fill="#65676b">👍 284 factory owners liked this</text>
+      <text x="360" y="24" font-size="11.5" fill="#65676b">💬 42 Comments</text>
+    </g>
+  </g>
+</svg>

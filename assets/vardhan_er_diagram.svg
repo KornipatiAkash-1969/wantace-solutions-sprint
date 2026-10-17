@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" style="background-color: #0f172a; font-family: 'Segoe UI', system-ui, monospace;">
+  <defs>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Title & Metadata -->
+  <g transform="translate(40, 35)">
+    <text x="0" y="0" font-size="22" font-weight="800" fill="#f8fafc">VARDHAN STEELWARE — PHASE 1 RELATIONAL DATA MODEL</text>
+    <text x="0" y="24" font-size="13" fill="#94a3b8">Clean, Normalized ER Schema designed for zero data collisions, partial dispatches &amp; polishing reconciliation</text>
+    <line x1="0" y1="36" x2="920" y2="36" stroke="#334155" stroke-width="1.5" />
+  </g>
+
+  <!-- ENTITY 1: CUSTOMER (Top Left) -->
+  <g transform="translate(40, 90)" filter="url(#card-shadow)">
+    <rect x="0" y="0" width="220" height="210" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <rect x="0" y="0" width="220" height="32" rx="6" fill="#0284c7" />
+    <text x="12" y="22" font-size="13" font-weight="bold" fill="#ffffff">CUSTOMER (Party Master)</text>
+    <g transform="translate(12, 50)" font-size="11" fill="#e2e8f0" font-family="monospace">
+      <text x="0" y="0" fill="#38bdf8" font-weight="bold">PK  customer_id (UUID)</text>
+      <text x="0" y="18">    business_name (VARCHAR)</text>
+      <text x="0" y="36">    city (VARCHAR)</text>
+      <text x="0" y="54">    phone (VARCHAR)</text>
+      <text x="0" y="72">    credit_limit (DECIMAL)</text>
+      <text x="0" y="90" fill="#f87171">    outstanding_dues (DECIMAL)</text>
+      <text x="0" y="108">    is_blocked (BOOLEAN)</text>
+      <text x="0" y="126" fill="#94a3b8">    created_at (TIMESTAMP)</text>
+    </g>
+  </g>
+
+  <!-- ENTITY 2: ORDER (Center Top) -->
+  <g transform="translate(320, 90)" filter="url(#card-shadow)">
+    <rect x="0" y="0" width="230" height="235" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <rect x="0" y="0" width="230" height="32" rx="6" fill="#0284c7" />
+    <text x="12" y="22" font-size="13" font-weight="bold" fill="#ffffff">ORDER (Sales Order)</text>
+    <g transform="translate(12, 50)" font-size="11" fill="#e2e8f0" font-family="monospace">
+      <text x="0" y="0" fill="#38bdf8" font-weight="bold">PK  order_id (UUID)</text>
+      <text x="0" y="18" fill="#fbbf24">    order_number (VS-26-001)</text>
+      <text x="0" y="36" fill="#38bdf8">FK  customer_id (UUID)</text>
+      <text x="0" y="54">    order_date (DATE)</text>
+      <text x="0" y="72">    channel (DIST/AMZ/FK)</text>
+      <text x="0" y="90" fill="#4ade80">    overall_status (ENUM)</text>
+      <text x="0" y="108">    payment_hold (BOOLEAN)</text>
+      <text x="0" y="126">    total_amount (DECIMAL)</text>
+      <text x="0" y="144">    remarks (TEXT)</text>
+      <text x="0" y="162" fill="#94a3b8">    created_by (USER_ID)</text>
+    </g>
+  </g>
+
+  <!-- ENTITY 3: ORDER_ITEM (Center Bottom) -->
+  <g transform="translate(320, 370)" filter="url(#card-shadow)">
+    <rect x="0" y="0" width="230" height="225" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="2" />
+    <rect x="0" y="0" width="230" height="32" rx="6" fill="#7e22ce" />
+    <text x="12" y="22" font-size="13" font-weight="bold" fill="#ffffff">ORDER_ITEM (Line Item)</text>
+    <g transform="translate(12, 50)" font-size="11" fill="#e2e8f0" font-family="monospace">
+      <text x="0" y="0" fill="#c084fc" font-weight="bold">PK  order_item_id (UUID)</text>
+      <text x="0" y="18" fill="#38bdf8">FK  order_id (UUID)</text>
+      <text x="0" y="36">    product_name (VARCHAR)</text>
+      <text x="0" y="54">    ordered_qty (INT)</text>
+      <text x="0" y="72">    unit (PCS/DOZEN/SET)</text>
+      <text x="0" y="90">    unit_rate (DECIMAL)</text>
+      <text x="0" y="108" fill="#4ade80">    dispatched_qty (INT)</text>
+      <text x="0" y="126" fill="#fbbf24">    in_polish_qty (INT)</text>
+      <text x="0" y="144" fill="#f87171">    status (PEND/POL/DISP)</text>
+    </g>
+  </g>
+
+  <!-- ENTITY 4: POLISHING_BATCH (Right Top) -->
+  <g transform="translate(620, 90)" filter="url(#card-shadow)">
+    <rect x="0" y="0" width="250" height="250" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="2" />
+    <rect x="0" y="0" width="250" height="32" rx="6" fill="#c2410c" />
+    <text x="12" y="22" font-size="13" font-weight="bold" fill="#ffffff">POLISHING_JOBWORK (Job Slip)</text>
+    <g transform="translate(12, 50)" font-size="11" fill="#e2e8f0" font-family="monospace">
+      <text x="0" y="0" fill="#fb923c" font-weight="bold">PK  batch_id (UUID)</text>
+      <text x="0" y="18">    karigar_name (e.g. Pappu)</text>
+      <text x="0" y="36">    sent_date (DATE)</text>
+      <text x="0" y="54" fill="#fbbf24">    weight_sent_kg (DECIMAL)</text>
+      <text x="0" y="72" fill="#4ade80">    received_pcs (INT)</text>
+      <text x="0" y="90">    return_date (DATE)</text>
+      <text x="0" y="108" fill="#f87171">    weight_shortage_kg (DEC)</text>
+      <text x="0" y="126">    karigar_rate_per_pc (DEC)</text>
+      <text x="0" y="144">    reconciliation_status (ENUM)</text>
+      <text x="0" y="162" fill="#94a3b8">    reconciled_by (Munshi ji)</text>
+    </g>
+  </g>
+
+  <!-- ENTITY 5: DISPATCH_RECORD (Right Bottom) -->
+  <g transform="translate(620, 380)" filter="url(#card-shadow)">
+    <rect x="0" y="0" width="250" height="220" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="2" />
+    <rect x="0" y="0" width="250" height="32" rx="6" fill="#15803d" />
+    <text x="12" y="22" font-size="13" font-weight="bold" fill="#ffffff">DISPATCH_RECORD (Gate Chalan)</text>
+    <g transform="translate(12, 50)" font-size="11" fill="#e2e8f0" font-family="monospace">
+      <text x="0" y="0" fill="#4ade80" font-weight="bold">PK  dispatch_id (UUID)</text>
+      <text x="0" y="18" fill="#38bdf8">FK  order_id (UUID)</text>
+      <text x="0" y="36">    dispatch_date (TIMESTAMP)</text>
+      <text x="0" y="54">    chalan_number (VARCHAR)</text>
+      <text x="0" y="72">    transporter_name (VARCHAR)</text>
+      <text x="0" y="90">    driver_phone (VARCHAR)</text>
+      <text x="0" y="108">    bilti_number (VARCHAR)</text>
+      <text x="0" y="126">    dispatched_by (Ramesh)</text>
+    </g>
+  </g>
+
+  <!-- ENTITY 6: PAYMENT_HOLD_LOG (Left Bottom) -->
+  <g transform="translate(40, 380)" filter="url(#card-shadow)">
+    <rect x="0" y="0" width="220" height="210" rx="6" fill="#1e293b" stroke="#ef4444" stroke-width="2" />
+    <rect x="0" y="0" width="220" height="32" rx="6" fill="#b91c1c" />
+    <text x="12" y="22" font-size="13" font-weight="bold" fill="#ffffff">CREDIT_HOLD_EVENT (Audit)</text>
+    <g transform="translate(12, 50)" font-size="11" fill="#e2e8f0" font-family="monospace">
+      <text x="0" y="0" fill="#f87171" font-weight="bold">PK  hold_id (UUID)</text>
+      <text x="0" y="18" fill="#38bdf8">FK  order_id (UUID)</text>
+      <text x="0" y="36" fill="#38bdf8">FK  customer_id (UUID)</text>
+      <text x="0" y="54">    held_by (Munshi ji)</text>
+      <text x="0" y="72">    overdue_amount (DECIMAL)</text>
+      <text x="0" y="90">    hold_reason (TEXT)</text>
+      <text x="0" y="108" fill="#4ade80">    released_by (Suresh)</text>
+      <text x="0" y="126">    release_timestamp (TS)</text>
+    </g>
+  </g>
+
+  <!-- RELATIONSHIP LINES -->
+  <!-- Customer (1) to Order (N) -->
+  <path d="M 260 170 L 320 170" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3,3" />
+  <circle cx="260" cy="170" r="4" fill="#38bdf8" />
+  <text x="270" y="162" font-size="11" fill="#38bdf8" font-family="monospace">1:N</text>
+
+  <!-- Order (1) to OrderItem (N) -->
+  <path d="M 435 325 L 435 370" fill="none" stroke="#a855f7" stroke-width="2" />
+  <circle cx="435" cy="325" r="4" fill="#a855f7" />
+  <text x="445" y="350" font-size="11" fill="#a855f7" font-family="monospace">1:N</text>
+
+  <!-- Order (1) to DispatchRecord (N - for partials) -->
+  <path d="M 550 200 L 590 200 L 590 480 L 620 480" fill="none" stroke="#22c55e" stroke-width="2" />
+  <circle cx="550" cy="200" r="4" fill="#22c55e" />
+  <text x="560" y="270" font-size="11" fill="#22c55e" font-family="monospace">1:N (Partials)</text>
+
+  <!-- OrderItem (N) to Polishing (M) -->
+  <path d="M 550 440 L 585 440 L 585 220 L 620 220" fill="none" stroke="#f97316" stroke-width="2" stroke-dasharray="4,2" />
+  <text x="560" y="320" font-size="10.5" fill="#f97316" font-family="monospace">Track Lot</text>
+
+  <!-- Order (1) to CreditHold (N) -->
+  <path d="M 320 220 L 290 220 L 290 460 L 260 460" fill="none" stroke="#ef4444" stroke-width="2" />
+  <text x="268" y="360" font-size="10.5" fill="#ef4444" font-family="monospace">Hold Log</text>
+
+  <!-- Bottom Explanatory Banner -->
+  <g transform="translate(40, 615)">
+    <rect x="0" y="0" width="920" height="45" rx="6" fill="#1e293b" stroke="#334155" />
+    <text x="15" y="27" font-size="11" fill="#94a3b8">ENGINEERING HIGHLIGHT: Supports multi-dispatch fulfillment without row cloning, explicit credit hold audit logs for Suresh/Munshi, and kg-to-pc weight loss tracking for 4-5 external karigars.</text>
+  </g>
+</svg>

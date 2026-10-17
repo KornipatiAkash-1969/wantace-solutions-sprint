@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 540" width="100%" height="100%" style="background-color: #cbd5e0; font-family: 'Segoe UI', 'Chalkboard', sans-serif;">
+  <!-- Aluminum Frame -->
+  <rect x="10" y="10" width="800" height="520" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="8" />
+  <rect x="18" y="18" width="784" height="504" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+  
+  <!-- Marker Tray at Bottom -->
+  <rect x="250" y="515" width="320" height="12" rx="3" fill="#718096" />
+  <rect x="280" y="510" width="50" height="8" rx="2" fill="#e53e3e" />
+  <rect x="340" y="510" width="50" height="8" rx="2" fill="#3182ce" />
+  <rect x="400" y="510" width="50" height="8" rx="2" fill="#2d3748" />
+  <rect x="460" y="508" width="60" height="10" rx="2" fill="#ecc94b" /> <!-- Duster -->
+
+  <!-- Board Header -->
+  <g transform="translate(35, 35)">
+    <text x="0" y="24" font-size="20" font-weight="900" fill="#1a202c" letter-spacing="1">FACTORY DISPATCH WHITEBOARD - FLOOR CABIN</text>
+    <text x="0" y="44" font-size="12" fill="#718096" font-weight="bold">LAST UPDATED: 14-OCT-2026, 3:30 PM BY DINESH (SUPERVISOR)</text>
+    
+    <!-- Photo badge -->
+    <rect x="580" y="-10" width="180" height="40" rx="4" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.5" />
+    <text x="590" y="14" font-size="12" font-weight="bold" fill="#c05621">[AUDIT PHOTO #2]</text>
+    <text x="590" y="28" font-size="9" fill="#9c4221">*PHONE NOS &amp; AMOUNTS BLURRED*</text>
+  </g>
+
+  <!-- Table Grid Lines -->
+  <line x1="35" y1="95" x2="785" y2="95" stroke="#2d3748" stroke-width="2.5" />
+  <line x1="35" y1="135" x2="785" y2="135" stroke="#a0aec0" stroke-width="1.5" />
+  <line x1="35" y1="210" x2="785" y2="210" stroke="#e2e8f0" stroke-width="1" />
+  <line x1="35" y1="285" x2="785" y2="285" stroke="#e2e8f0" stroke-width="1" />
+  <line x1="35" y1="360" x2="785" y2="360" stroke="#e2e8f0" stroke-width="1" />
+  <line x1="35" y1="435" x2="785" y2="435" stroke="#a0aec0" stroke-width="1.5" />
+
+  <!-- Vertical Column Lines -->
+  <line x1="100" y1="95" x2="100" y2="435" stroke="#cbd5e0" stroke-width="1.5" />
+  <line x1="260" y1="95" x2="260" y2="435" stroke="#cbd5e0" stroke-width="1.5" />
+  <line x1="410" y1="95" x2="410" y2="435" stroke="#cbd5e0" stroke-width="1.5" />
+  <line x1="530" y1="95" x2="530" y2="435" stroke="#cbd5e0" stroke-width="1.5" />
+  <line x1="650" y1="95" x2="650" y2="435" stroke="#cbd5e0" stroke-width="1.5" />
+
+  <!-- Table Headers (Drawn in Blue marker style) -->
+  <g transform="translate(35, 120)" font-size="13" font-weight="bold" fill="#2b6cb0">
+    <text x="12" y="0">LOT #</text>
+    <text x="80" y="0">PARTY &amp; SIZE</text>
+    <text x="240" y="0">PRINT / CORRUG</text>
+    <text x="390" y="0">STITCH / QC</text>
+    <text x="510" y="0">DRIVER / DISP</text>
+    <text x="630" y="0">REMARKS</text>
+  </g>
+
+  <!-- Row 1: Active batch -->
+  <g transform="translate(35, 170)" font-size="12" fill="#2d3748">
+    <text x="12" y="0" font-weight="bold" fill="#e53e3e">#881</text>
+    <text x="75" y="-10" font-weight="bold">Auto-Link</text>
+    <text x="75" y="8" font-size="10.5" fill="#718096">2,500 5-Ply</text>
+    <text x="240" y="0" fill="#22543d" font-weight="bold">✓ Corrug Done</text>
+    <text x="390" y="0" fill="#22543d">✓ Stitch Done</text>
+    <text x="510" y="0" fill="#2b6cb0" font-weight="bold">Loading Tata Ace</text>
+    <text x="630" y="0" fill="#718096">Chalan #4102</text>
+  </g>
+
+  <!-- Row 2: Screwed up batch -->
+  <g transform="translate(35, 245)" font-size="12">
+    <rect x="0" y="-30" width="750" height="70" fill="#fff5f5" opacity="0.6" />
+    <text x="12" y="0" font-weight="bold" fill="#c53030">#882</text>
+    <text x="75" y="-12" font-weight="bold" fill="#742a2a">Shree Krishna</text>
+    <text x="75" y="6" font-size="10.5" fill="#c53030">1,800 Sweet Box</text>
+    <text x="240" y="-6" fill="#e53e3e" font-weight="bold">❌ REPRINT RUN</text>
+    <text x="240" y="10" font-size="10" fill="#9b2c2c">New plate shelf 7</text>
+    <text x="390" y="0" fill="#a0aec0">Waiting</text>
+    <text x="510" y="0" fill="#e53e3e" font-weight="bold">HOLD</text>
+    <text x="630" y="-6" fill="#c53030" font-size="11" font-weight="bold">Vikas sir to talk</text>
+    <text x="630" y="10" font-size="10" fill="#742a2a">Party upset!</text>
+  </g>
+
+  <!-- Row 3: In progress -->
+  <g transform="translate(35, 320)" font-size="12" fill="#2d3748">
+    <text x="12" y="0" font-weight="bold">#883</text>
+    <text x="75" y="-10" font-weight="bold">Bikaner Sweets</text>
+    <text x="75" y="8" font-size="10.5" fill="#718096">4,000 3-Ply</text>
+    <text x="240" y="0" fill="#2b6cb0">Printing (Ink OK)</text>
+    <text x="390" y="0" fill="#d69e2e">Stitching 2.8k/4k</text>
+    <text x="510" y="0" fill="#d69e2e">Tempo 2nd round</text>
+    <text x="630" y="0" fill="#4a5568">Part dispatch</text>
+  </g>
+
+  <!-- Row 4: Raw Paper Delayed -->
+  <g transform="translate(35, 395)" font-size="12" fill="#2d3748">
+    <text x="12" y="0" font-weight="bold">#884</text>
+    <text x="75" y="-10" font-weight="bold">MedLife Diag</text>
+    <text x="75" y="8" font-size="10.5" fill="#718096">5,000 Duplex</text>
+    <text x="240" y="0" fill="#e53e3e">Reels arriving 5 PM</text>
+    <text x="390" y="0" fill="#a0aec0">Night shift</text>
+    <text x="510" y="0">Pending</text>
+    <text x="630" y="0" fill="#b7791f" font-weight="bold">Diwali Rush</text>
+  </g>
+
+  <!-- Magnetic Pushpin / Sticky Notes on the right -->
+  <g transform="translate(45, 455)">
+    <circle cx="10" cy="15" r="8" fill="#e53e3e" />
+    <text x="28" y="20" font-size="13" font-weight="bold" fill="#c53030">URGENT DIWALI RULE:</text>
+    <text x="195" y="20" font-size="12" fill="#2d3748">No tempo leaves the yard without Dinesh physical signature on yellow copy!</text>
+    <text x="28" y="42" font-size="11.5" fill="#718096">Owner note: "Sab log WhatsApp group mein photo daal do jab maal load ho jaye. Phone mat karo baar baar."</text>
+  </g>
+</svg>

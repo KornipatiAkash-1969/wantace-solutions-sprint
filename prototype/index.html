@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vardhan Steelware — Factory OS (Phase 1 MVP)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- TOP APP BAR -->
+  <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center font-black text-xl shadow-lg shadow-orange-500/20 text-white">
+          V
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="text-lg font-bold text-white tracking-tight">Vardhan Steelware</h1>
+            <span class="bg-amber-500/10 text-amber-400 text-xs px-2 py-0.5 rounded-full border border-amber-500/20 font-medium">Phase 1 Pre-Diwali MVP</span>
+          </div>
+          <p class="text-xs text-slate-400">Jagadhri, Haryana • Built by Wantace Solutions Engineering</p>
+        </div>
+      </div>
+
+      <!-- ROLE SELECTOR SWITCHER -->
+      <div class="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800">
+        <span class="text-xs text-slate-400 px-3 font-semibold uppercase tracking-wider hidden md:inline">Simulate Role:</span>
+        <button onclick="switchRole('suresh')" id="role-btn-suresh" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition flex items-center space-x-2 bg-blue-600 text-white shadow">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <span>Suresh (Owner)</span>
+        </button>
+        <button onclick="switchRole('kunal')" id="role-btn-kunal" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition flex items-center space-x-2">
+          <i class="fa-solid fa-laptop"></i>
+          <span>Kunal (Sales Desk)</span>
+        </button>
+        <button onclick="switchRole('ramesh')" id="role-btn-ramesh" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition flex items-center space-x-2">
+          <i class="fa-solid fa-industry"></i>
+          <span>Ramesh (Floor Dispatch)</span>
+        </button>
+        <button onclick="switchRole('munshi')" id="role-btn-munshi" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition flex items-center space-x-2">
+          <i class="fa-solid fa-receipt"></i>
+          <span>Munshi Ji (Accounts)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ROLE BANNER -->
+  <div id="role-banner" class="bg-blue-950/60 border-b border-blue-800/40 px-4 py-2 text-xs text-blue-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+        <span id="role-banner-text"><strong>Viewing as Suresh Vardhan (58, Owner):</strong> "Mujhe bas phone pe dekhna hai kaunsa order kahan atka hai." Showing 7:30 AM Morning Pulse.</span>
+      </div>
+      <span class="text-blue-300/80 font-mono text-[11px]">Sync: Live • 25 Orders (1-7 Sept 2026)</span>
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ========================================== -->
+    <!-- VIEW 1: SURESH (OWNER 30-SEC PHONE PULSE)   -->
+    <!-- ========================================== -->
+    <div id="view-suresh" class="space-y-6">
+      
+      <!-- Top 4 Pulse Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-slate-400">Total Booked (7 Days)</span>
+            <span class="p-2 rounded-xl bg-blue-500/10 text-blue-400"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-2xl font-black text-white">₹5.86 Lakh</span>
+            <span class="text-xs text-emerald-400 font-bold">25 Orders</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">Run-rate: 107/mo (vs Suresh guess 60-70)</p>
+        </div>
+
+        <div class="bg-slate-900 border border-amber-900/40 rounded-2xl p-4 shadow-sm hover:border-amber-700/60 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-amber-300">Atka Maal (Polishing Delay)</span>
+            <span class="p-2 rounded-xl bg-amber-500/10 text-amber-400"><i class="fa-solid fa-hourglass-half"></i></span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-2xl font-black text-amber-400">4 Orders</span>
+            <span class="text-xs text-amber-300/80">380 pcs</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">External karigars: Bansal, New Delhi, Gupta</p>
+        </div>
+
+        <div class="bg-slate-900 border border-rose-900/40 rounded-2xl p-4 shadow-sm hover:border-rose-700/60 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-rose-300">Payment Holds</span>
+            <span class="p-2 rounded-xl bg-rose-500/10 text-rose-400"><i class="fa-solid fa-ban"></i></span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-2xl font-black text-rose-400">₹1.80 Lakh</span>
+            <span class="text-xs text-rose-300/80">2 Orders Held</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">Sharma Bartan Karnal (Diwali stock locked)</p>
+        </div>
+
+        <div class="bg-slate-900 border border-purple-900/40 rounded-2xl p-4 shadow-sm hover:border-purple-700/60 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-medium text-purple-300">Karigar Metal Shortage</span>
+            <span class="p-2 rounded-xl bg-purple-500/10 text-purple-400"><i class="fa-solid fa-scale-unbalanced"></i></span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-2xl font-black text-purple-400">-6.00 kg</span>
+            <span class="text-xs text-rose-400 font-bold">1.43% Loss</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">Karigar Pappu (420kg issued, 1180 pcs)</p>
+        </div>
+
+      </div>
+
+      <!-- SURESH'S 3 MORNING REPORTS TABS -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+        <div class="border-b border-slate-800 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h2 class="text-base font-bold text-white flex items-center space-x-2">
+              <span>Suresh's Daily Morning Pulse (7:30 AM Reports)</span>
+              <span class="text-xs font-normal text-slate-400">(Zero phone calls required)</span>
+            </h2>
+            <p class="text-xs text-slate-400">Directly addresses: "Customer phone karta hai toh mujhe Ramesh ko phone karna padta hai"</p>
+          </div>
+          <div class="flex space-x-2">
+            <button onclick="showReport('report1')" id="btn-rep-1" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white">
+              Report 1: Atka Maal (Delays)
+            </button>
+            <button onclick="showReport('report2')" id="btn-rep-2" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white">
+              Report 2: Payment Holds
+            </button>
+            <button onclick="showReport('report3')" id="btn-rep-3" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white">
+              Report 3: Polishing Shortage
+            </button>
+          </div>
+        </div>
+
+        <!-- REPORT 1: ATKA MAAL -->
+        <div id="report-1-content" class="p-6">
+          <div class="mb-4 flex items-center justify-between text-xs text-slate-400">
+            <span>Orders with stages currently stalled or pending past standard 48hr window:</span>
+            <span class="text-amber-400 font-semibold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 4 High Priority Bottlenecks</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-950 text-slate-400 uppercase font-semibold border-b border-slate-800">
+                <tr>
+                  <th class="py-3 px-4">Order #</th>
+                  <th class="py-3 px-4">Party & City</th>
+                  <th class="py-3 px-4">Utensil Items</th>
+                  <th class="py-3 px-4">Current Stage</th>
+                  <th class="py-3 px-4">Delay Aging</th>
+                  <th class="py-3 px-4 text-right">Quick Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 font-medium">
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-4 font-mono text-blue-400">VS-26-008</td>
+                  <td class="py-3.5 px-4">
+                    <div class="text-white font-bold">Bansal & Sons</div>
+                    <div class="text-slate-400 text-[11px]">Rohtak, Haryana</div>
+                  </td>
+                  <td class="py-3.5 px-4">120 pcs • Tope No.6</td>
+                  <td class="py-3.5 px-4">
+                    <span class="bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30 font-bold">In Polishing</span>
+                    <span class="text-[11px] text-slate-400 block mt-0.5">Karigar: Pappu</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-rose-400 font-bold">Delayed 4 Days</td>
+                  <td class="py-3.5 px-4 text-right space-x-2">
+                    <button onclick="alert('Calling Karigar Pappu: +91 98721 00112')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded text-[11px] font-bold"><i class="fa-solid fa-phone mr-1"></i> Call Karigar</button>
+                    <button onclick="alert('Alert sent to Ramesh on factory floor to expedite!')" class="px-2.5 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded text-[11px] font-bold">Alert Ramesh</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-4 font-mono text-blue-400">VS-26-013</td>
+                  <td class="py-3.5 px-4">
+                    <div class="text-white font-bold">New Delhi Steel House</div>
+                    <div class="text-slate-400 text-[11px]">Chawri Bazar, Delhi</div>
+                  </td>
+                  <td class="py-3.5 px-4">60 pcs • Bhagona 8L</td>
+                  <td class="py-3.5 px-4">
+                    <span class="bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30 font-bold">In Polishing</span>
+                    <span class="text-[11px] text-slate-400 block mt-0.5">Karigar: Shyam</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-rose-400 font-bold">Delayed 3 Days</td>
+                  <td class="py-3.5 px-4 text-right space-x-2">
+                    <button onclick="alert('Calling Karigar Shyam')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded text-[11px] font-bold"><i class="fa-solid fa-phone mr-1"></i> Call Karigar</button>
+                    <button onclick="alert('Priority bump sent to floor!')" class="px-2.5 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded text-[11px] font-bold">Alert Ramesh</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-4 font-mono text-blue-400">VS-26-019</td>
+                  <td class="py-3.5 px-4">
+                    <div class="text-white font-bold">Gupta Traders</div>
+                    <div class="text-slate-400 text-[11px]">Ambala Cantt</div>
+                  </td>
+                  <td class="py-3.5 px-4">40 pcs • Bhagona 8 ltr</td>
+                  <td class="py-3.5 px-4">
+                    <span class="bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30 font-bold">In Polishing</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-amber-400 font-bold">Delayed 2 Days</td>
+                  <td class="py-3.5 px-4 text-right space-x-2">
+                    <button onclick="alert('Alerted Ramesh to inspect batch')" class="px-2.5 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded text-[11px] font-bold">Alert Ramesh</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-4 font-mono text-blue-400">VS-26-021</td>
+                  <td class="py-3.5 px-4">
+                    <div class="text-white font-bold">Verma Utensils</div>
+                    <div class="text-slate-400 text-[11px]">Sonipat</div>
+                  </td>
+                  <td class="py-3.5 px-4">180 kg(?) • Kadhai 10 no.</td>
+                  <td class="py-3.5 px-4">
+                    <span class="bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded border border-rose-500/30 font-bold">Rate Unconfirmed</span>
+                  </td>
+                  <td class="py-3.5 px-4 text-amber-400 font-bold">Blocked at Desk</td>
+                  <td class="py-3.5 px-4 text-right space-x-2">
+                    <button onclick="alert('Prompting Kunal to fix unit to PCS and confirm rate with Verma ji')" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-[11px] font-bold">Nudge Kunal</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- REPORT 2: PAYMENT HOLDS -->
+        <div id="report-2-content" class="p-6 hidden">
+          <div class="mb-4 flex items-center justify-between text-xs text-slate-400">
+            <span>Parties whose orders are blocked due to outstanding ledger balance:</span>
+            <span class="text-rose-400 font-semibold"><i class="fa-solid fa-lock mr-1"></i> Munshi Ji Credit Control Gate</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-950 text-slate-400 uppercase font-semibold border-b border-slate-800">
+                <tr>
+                  <th class="py-3 px-4">Order #</th>
+                  <th class="py-3 px-4">Party Name</th>
+                  <th class="py-3 px-4">Current Order</th>
+                  <th class="py-3 px-4">Old Outstanding</th>
+                  <th class="py-3 px-4">Blocked Date</th>
+                  <th class="py-3 px-4 text-right">Suresh 1-Tap Authorization</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 font-medium">
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-4 font-mono text-rose-400">VS-26-007</td>
+                  <td class="py-3.5 px-4">
+                    <div class="text-white font-bold">Sharma Bartan Bhandar</div>
+                    <div class="text-slate-400 text-[11px]">Karnal, Haryana</div>
+                  </td>
+                  <td class="py-3.5 px-4">30 doz Gilas 300ml (₹7,800)</td>
+                  <td class="py-3.5 px-4 text-rose-400 font-bold">₹1,80,000 Overdue</td>
+                  <td class="py-3.5 px-4 text-slate-400">03 Sep 2026</td>
+                  <td class="py-3.5 px-4 text-right">
+                    <button onclick="overridePaymentHold('VS-26-007')" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-[11px] font-bold shadow">
+                      <i class="fa-solid fa-unlock mr-1"></i> Suresh Override & Dispatch
+                    </button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-4 font-mono text-rose-400">VS-26-024</td>
+                  <td class="py-3.5 px-4">
+                    <div class="text-white font-bold">Sharma Bartan Bhandar</div>
+                    <div class="text-slate-400 text-[11px]">Karnal, Haryana</div>
+                  </td>
+                  <td class="py-3.5 px-4">20 set Patila 5pc (₹18,400)</td>
+                  <td class="py-3.5 px-4 text-rose-400 font-bold">₹1,80,000 Overdue</td>
+                  <td class="py-3.5 px-4 text-slate-400">07 Sep 2026</td>
+                  <td class="py-3.5 px-4 text-right">
+                    <button onclick="overridePaymentHold('VS-26-024')" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-[11px] font-bold shadow">
+                      <i class="fa-solid fa-unlock mr-1"></i> Suresh Override & Dispatch
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- REPORT 3: POLISHING SHORTAGE -->
+        <div id="report-3-content" class="p-6 hidden">
+          <div class="mb-4 flex items-center justify-between text-xs text-slate-400">
+            <span>Audit reconciliation of stainless steel issued vs returned pieces:</span>
+            <span class="text-purple-400 font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> Prevents 3-4% Annual Metal Leakage</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-950 text-slate-400 uppercase font-semibold border-b border-slate-800">
+                <tr>
+                  <th class="py-3 px-4">Batch ID</th>
+                  <th class="py-3 px-4">Karigar</th>
+                  <th class="py-3 px-4">Utensil</th>
+                  <th class="py-3 px-4">Issued (kg)</th>
+                  <th class="py-3 px-4">Received (pcs)</th>
+                  <th class="py-3 px-4">Shortage (kg)</th>
+                  <th class="py-3 px-4 text-right">Status / Audit Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 font-medium">
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-4 font-mono text-purple-400">POL-881</td>
+                  <td class="py-3.5 px-4 font-bold text-white">Karigar Pappu</td>
+                  <td class="py-3.5 px-4">Tope No.6</td>
+                  <td class="py-3.5 px-4 font-mono">420.00 kg</td>
+                  <td class="py-3.5 px-4 font-mono">1,180 pcs</td>
+                  <td class="py-3.5 px-4 text-rose-400 font-bold font-mono">-6.00 kg (1.43%)</td>
+                  <td class="py-3.5 px-4 text-right">
+                    <span class="bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded border border-rose-500/30 font-bold mr-2">Shortage Flagged</span>
+                    <button onclick="alert('Munshi Ji instructed to deduct ₹1,680 (6kg scrap) from Pappu polish payment')" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded text-[11px]">Deduct Payout</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-4 font-mono text-purple-400">POL-882</td>
+                  <td class="py-3.5 px-4 font-bold text-white">Karigar Shyam</td>
+                  <td class="py-3.5 px-4">Bhagona 8L</td>
+                  <td class="py-3.5 px-4 font-mono">250.00 kg</td>
+                  <td class="py-3.5 px-4 font-mono">410 pcs</td>
+                  <td class="py-3.5 px-4 text-emerald-400 font-mono">-1.20 kg (0.48%)</td>
+                  <td class="py-3.5 px-4 text-right">
+                    <span class="bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30 font-bold">Within Tolerance</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEW 2: KUNAL (ORDER DESK & DEDUPLICATION)  -->
+    <!-- ========================================== -->
+    <div id="view-kunal" class="space-y-6 hidden">
+      
+      <!-- Kunal Order Intake Form Card with Validation -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+          <div>
+            <h2 class="text-base font-bold text-white flex items-center space-x-2">
+              <i class="fa-solid fa-cart-plus text-blue-400"></i>
+              <span>Sales Order Intake Desk (Kunal)</span>
+            </h2>
+            <p class="text-xs text-slate-400">Auto-validates party name, prevents repeat WhatsApp entries, and enforces strict units.</p>
+          </div>
+          <span class="bg-blue-500/10 text-blue-400 text-xs px-2.5 py-1 rounded-lg border border-blue-500/20 font-bold">
+            Live Duplicate Guard Active
+          </span>
+        </div>
+
+        <!-- Real-time Duplicate Alert Box (Dynamic) -->
+        <div id="duplicate-warning" class="hidden mt-4 bg-amber-950/50 border border-amber-600/60 rounded-xl p-3 text-xs text-amber-200 flex items-start space-x-3">
+          <i class="fa-solid fa-triangle-exclamation text-amber-400 text-base mt-0.5"></i>
+          <div>
+            <div class="font-bold text-amber-300">POTENTIAL DUPLICATE ORDER DETECTED!</div>
+            <div id="duplicate-warning-text" class="text-amber-200/90 mt-0.5">
+              Warning: Gupta Traders Ambala already has a pending order for Kadai No.10 (200 pcs) placed on 01-09-26. Is this a repeat message from WhatsApp or a genuine new order?
+            </div>
+          </div>
+        </div>
+
+        <form id="order-form" onsubmit="handleCreateOrder(event)" class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1">Customer / Party Name *</label>
+            <select id="party-select" onchange="checkDuplicateAlert()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:border-blue-500 focus:outline-none" required>
+              <option value="">Select Distributor / Channel...</option>
+              <option value="Gupta Traders Ambala">Gupta Traders Ambala</option>
+              <option value="Sharma Bartan Bhandar Karnal">Sharma Bartan Bhandar Karnal (Hold Risk)</option>
+              <option value="Jain Crockery Panipat">Jain Crockery Panipat</option>
+              <option value="New Delhi Steel House">New Delhi Steel House</option>
+              <option value="Bansal & Sons Rohtak">Bansal & Sons Rohtak</option>
+              <option value="Mehra Kitchenware Jalandhar">Mehra Kitchenware Jalandhar</option>
+              <option value="Verma Utensils Sonipat">Verma Utensils Sonipat</option>
+              <option value="Online - Amazon">Online - Amazon (Direct D2C)</option>
+              <option value="Online - Flipkart">Online - Flipkart (Direct D2C)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1">Utensil Product *</label>
+            <select id="item-select" onchange="checkDuplicateAlert()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:border-blue-500 focus:outline-none" required>
+              <option value="Kadai No.10">Kadai No.10 (SS Heavy Gauge)</option>
+              <option value="Patila set 5pc">Patila set 5pc (SS Mirror Finish)</option>
+              <option value="Thali 12 inch">Thali 12 inch (Laser Edge)</option>
+              <option value="Gilas 300ml">Gilas 300ml (Fluted)</option>
+              <option value="Tope No.6">Tope No.6 (Deep Buff)</option>
+              <option value="Bhagona 8L">Bhagona 8L (Heavy Bottom)</option>
+              <option value="Dinner set 24pc">Dinner set 24pc (Gift Box)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1">Quantity & Unit *</label>
+            <div class="grid grid-cols-2 gap-2">
+              <input type="number" id="order-qty" min="1" value="100" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:border-blue-500 focus:outline-none" required>
+              <select id="order-unit" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:border-blue-500 focus:outline-none" required>
+                <option value="pcs">pcs</option>
+                <option value="dozen">dozen</option>
+                <option value="set">set</option>
+                <!-- NOTICE: 'kg' is explicitly excluded for finished goods! -->
+              </select>
+            </div>
+            <span class="text-[10px] text-slate-400 mt-0.5 block">('kg' locked out to prevent unit corruption)</span>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1">Unit Rate (₹) *</label>
+            <div class="flex space-x-2">
+              <input type="number" id="order-rate" min="10" value="185" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:border-blue-500 focus:outline-none" required>
+              <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold text-xs whitespace-nowrap shadow">
+                Book Order
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Live Order Registry Table (With Full Data from Sheet) -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+        <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+          <h3 class="font-bold text-white text-sm">Full 1-7 September Order Sheet Registry (Cleaned & Normalized)</h3>
+          <span class="text-xs text-slate-400 font-mono">25 Total Records</span>
+        </div>
+        <div class="overflow-x-auto max-h-[500px]">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-950 text-slate-400 uppercase font-semibold sticky top-0 border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-4">Date</th>
+                <th class="py-3 px-4">Order ID</th>
+                <th class="py-3 px-4">Party Name</th>
+                <th class="py-3 px-4">Item & Qty</th>
+                <th class="py-3 px-4">Rate</th>
+                <th class="py-3 px-4">Value</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4">Remarks & Defect Diagnosis</th>
+              </tr>
+            </thead>
+            <tbody id="orders-table-body" class="divide-y divide-slate-800/60 font-medium">
+              <!-- Dynamically populated from JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEW 3: RAMESH (FLOOR & 2-TAP DISPATCH)    -->
+    <!-- ========================================== -->
+    <div id="view-ramesh" class="space-y-6 hidden">
+      
+      <div class="bg-amber-950/40 border border-amber-600/40 rounded-2xl p-4 text-amber-200 text-xs flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <i class="fa-solid fa-hand text-xl text-amber-400"></i>
+          <div>
+            <div class="font-bold text-white text-sm">Ramesh Bhai Ka Shop-Floor Screen (Zero English Typing)</div>
+            <div>Bade buttons, 2-tap dispatch, aur seedha mobile se karigar ko maal bhejne ka tarika.</div>
+          </div>
+        </div>
+        <span class="bg-amber-500/20 text-amber-300 font-mono px-3 py-1 rounded-full text-xs font-bold border border-amber-500/30">
+          Factory Mode Active
+        </span>
+      </div>
+
+      <!-- Ramesh Floor Action Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="ramesh-cards-container">
+        <!-- Dynamically rendered floor action cards -->
+      </div>
+
+      <!-- Partial Dispatch Modal Component -->
+      <div id="partial-modal" style="display: none;" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <h3 class="font-bold text-white text-base">गाड़ी में माल लोड करें (Partial Dispatch)</h3>
+            <button onclick="closePartialModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+          </div>
+          <div class="space-y-3 text-xs">
+            <div>
+              <span class="text-slate-400">Party:</span>
+              <span id="modal-party" class="text-white font-bold ml-2">Mehra Kitchenware</span>
+            </div>
+            <div>
+              <span class="text-slate-400">Order:</span>
+              <span id="modal-item" class="text-white font-bold ml-2">300 pcs Kadai No.10</span>
+            </div>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+              <label class="block text-slate-300 font-semibold mb-2">गाड़ी में कितने पीस लोड किए? (Slider)</label>
+              <div class="flex items-center space-x-4">
+                <input type="range" id="modal-slider" min="1" max="300" value="180" oninput="updateSliderVal(this.value)" class="flex-1 accent-emerald-500 h-2 bg-slate-800 rounded-lg">
+                <span id="modal-slider-disp" class="text-xl font-black text-emerald-400 font-mono w-16 text-right">180</span>
+                <span class="text-slate-400 font-bold">pcs</span>
+              </div>
+              <div class="text-[11px] text-amber-400 mt-2 font-medium" id="modal-remaining-text">
+                → Baaki bachega: 120 pcs (System will track backorder automatically without new row!)
+              </div>
+            </div>
+            <div>
+              <label class="block text-slate-300 font-semibold mb-1">Transporter / Tempo No.</label>
+              <input type="text" id="modal-vehicle" value="HR-02-AB-4412 (Tata Ace)" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white">
+            </div>
+          </div>
+          <div class="pt-3 flex space-x-3">
+            <button onclick="closePartialModal()" class="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-bold text-xs">Cancel</button>
+            <button onclick="confirmPartialDispatch()" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-xs shadow-lg shadow-emerald-600/30">
+              <i class="fa-solid fa-check mr-1"></i> Confirm Dispatch
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEW 4: MUNSHI JI (ACCOUNTS & RECONCILIATION) -->
+    <!-- ========================================== -->
+    <div id="view-munshi" class="space-y-6 hidden">
+      
+      <!-- Munshi Header -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="text-base font-bold text-white flex items-center space-x-2">
+            <i class="fa-solid fa-scale-balanced text-cyan-400"></i>
+            <span>Munshi Ji's Accounts & Jobwork Audit Desk</span>
+          </h2>
+          <p class="text-xs text-slate-400">Tally synchronization, outsourced polishing metal loss calculation, and payment hold enforcement.</p>
+        </div>
+        <div class="flex space-x-2">
+          <button onclick="downloadTallyCSV()" class="px-3 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-bold flex items-center space-x-2 shadow">
+            <i class="fa-solid fa-file-excel"></i>
+            <span>Download Clean Tally CSV</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Polishing Loss Calculator Card -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <h3 class="text-sm font-bold text-white mb-2 flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+          <span>Karigar Jobwork Metal Shortage Audit (Pappu / Shyam / Ramu)</span>
+        </h3>
+        <p class="text-xs text-slate-400 mb-4">Reconciles raw utensil weight sent (kg) against polished pieces received, preventing the 3-4% annual stainless steel scrap leakage.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div>
+            <span class="text-slate-400 block mb-1">Karigar Name</span>
+            <input type="text" id="audit-karigar" value="Karigar Pappu" class="w-full bg-slate-900 border border-slate-800 rounded p-2 text-white font-bold">
+          </div>
+          <div>
+            <span class="text-slate-400 block mb-1">Raw Weight Sent (kg)</span>
+            <input type="number" id="audit-sent-kg" value="420.0" oninput="recalcShortage()" class="w-full bg-slate-900 border border-slate-800 rounded p-2 text-white font-mono">
+          </div>
+          <div>
+            <span class="text-slate-400 block mb-1">Finished Pcs Received</span>
+            <input type="number" id="audit-recd-pcs" value="1180" oninput="recalcShortage()" class="w-full bg-slate-900 border border-slate-800 rounded p-2 text-white font-mono">
+          </div>
+          <div>
+            <span class="text-slate-400 block mb-1">Piece Standard Wt</span>
+            <div class="flex items-center space-x-2">
+              <span class="text-slate-300 font-mono text-sm py-2">0.3508 kg/pc</span>
+              <span id="audit-shortage-badge" class="px-2 py-1 rounded bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">
+                -6.0 kg Shortage!
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 p-3 bg-rose-950/30 border border-rose-800/40 rounded-xl text-xs flex items-center justify-between">
+          <div class="text-rose-200">
+            <strong>Financial Deduction Action:</strong> 6 kg stainless steel scrap = ₹1,680 direct loss. Recommended deduction from Pappu's buffing charges on next billing cycle.
+          </div>
+          <button onclick="alert('Deduction logged in Tally Adjustment Ledger for Karigar Pappu.')" class="px-3 py-1 bg-rose-600 hover:bg-rose-500 text-white rounded font-bold text-xs">
+            Post Tally Deduction
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 border-t border-slate-800 py-4 px-4 text-xs text-slate-400 text-center">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div>Wantace Solutions Sprint Prototype • Client: Vardhan Steelware (Phase 1 MVP)</div>
+      <div class="font-mono text-[11px] text-slate-400">Strictly scoped for Diwali delivery: Zero typing for Ramesh • 30-sec pulse for Suresh</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

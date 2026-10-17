@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" width="100%" height="100%" style="background-color: #d1b894; font-family: 'Courier New', 'Caveat', 'Segoe UI', monospace;">
+  <!-- Notebook Cover & Binder Effect -->
+  <rect x="10" y="10" width="780" height="530" rx="8" fill="#fcf9f0" stroke="#bfa37b" stroke-width="4" />
+  
+  <!-- Notebook faint lines -->
+  <defs>
+    <pattern id="ruled-lines" width="100" height="28" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="28" x2="100" y2="28" stroke="#dbe4ee" stroke-width="1" />
+    </pattern>
+    <filter id="ink-smudge">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" />
+    </filter>
+  </defs>
+  
+  <rect x="40" y="40" width="720" height="470" fill="url(#ruled-lines)" />
+  <line x1="90" y1="40" x2="90" y2="510" stroke="#f687b2" stroke-width="1.5" /> <!-- Margin line -->
+
+  <!-- Header Stamp & Info -->
+  <g transform="translate(110, 45)">
+    <text x="0" y="20" font-size="18" font-weight="bold" fill="#1a365d" font-family="'Segoe UI', sans-serif">DAILY JOB DISPATCH REGISTER - APEX CORRUGATED</text>
+    <text x="0" y="38" font-size="12" fill="#718096" font-family="'Segoe UI', sans-serif">DATE: 14/10/2026 (Wednesday) | SHIFT: DAY (8 AM - 8 PM) | SUPERVISOR: DINESH</text>
+    <rect x="450" y="-8" width="160" height="45" rx="4" fill="none" stroke="#e53e3e" stroke-width="2" stroke-dasharray="4,2" transform="rotate(-3)" />
+    <text x="460" y="16" font-size="12" font-weight="bold" fill="#c53030" transform="rotate(-3)">[AUDIT PHOTO #1]</text>
+    <text x="460" y="30" font-size="9" fill="#9b2c2c" transform="rotate(-3)">*CONFIDENTIAL DATA BLURRED*</text>
+  </g>
+
+  <!-- Table Header -->
+  <g transform="translate(60, 105)" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="11" fill="#2d3748">
+    <rect x="0" y="0" width="700" height="26" fill="#edf2f7" stroke="#cbd5e0" />
+    <text x="10" y="18">JOB #</text>
+    <text x="65" y="18">CLIENT / PARTY</text>
+    <text x="210" y="18">BOX SIZE &amp; PLY</text>
+    <text x="340" y="18">QTY (ORD)</text>
+    <text x="420" y="18">STATUS / FLOOR</text>
+    <text x="545" y="18">DISPATCH / CHALAN</text>
+  </g>
+
+  <!-- Row 1: Normal Order -->
+  <g transform="translate(60, 140)" font-size="12" fill="#1a202c">
+    <text x="10" y="16" font-weight="bold">#1408</text>
+    <text x="65" y="16">Auto-Link Ancillaries (Gurgaon)</text>
+    <text x="210" y="16">18x12x10" (5-Ply Kraft)</text>
+    <text x="340" y="16">2,500 pcs</text>
+    <text x="420" y="16" fill="#2b6cb0">Ready in yard</text>
+    <text x="545" y="16" fill="#22543d" font-weight="bold">Tempo DL-1L-67XX (OK)</text>
+  </g>
+
+  <!-- Row 2: REPRINT CRISIS - HIGHLIGHTED -->
+  <g transform="translate(60, 175)" font-size="12">
+    <rect x="0" y="-8" width="700" height="42" fill="#fff5f5" stroke="#feb2b2" stroke-dasharray="3,3" />
+    <text x="10" y="12" font-weight="bold" fill="#c53030">#1409</text>
+    <text x="65" y="12" fill="#742a2a" font-weight="bold">Shree Krishna Confectioners</text>
+    <text x="210" y="12" fill="#742a2a">12x10x4" Die-cut sweets</text>
+    <text x="340" y="12" fill="#c53030" font-weight="bold">1,800 pcs</text>
+    <text x="420" y="12" fill="#e53e3e" font-weight="bold">❌ REJECTED AT QC</text>
+    <text x="545" y="12" fill="#c53030">HOLD - Plate Mismatch</text>
+    <text x="65" y="28" font-size="10.5" fill="#e53e3e" font-style="italic">→ Note: "Purana ₹149 MRP block print ho gaya. Naya block shelf 7 pe tha. Scrap hua 1,800 sheets."</text>
+  </g>
+
+  <!-- Row 3: Partial Dispatch -->
+  <g transform="translate(60, 228)" font-size="12" fill="#1a202c">
+    <text x="10" y="16" font-weight="bold">#1410</text>
+    <text x="65" y="16">Bikaner Sweets &amp; Snacks</text>
+    <text x="210" y="16">14x14x5" (3-Ply printed)</text>
+    <text x="340" y="16">4,000 pcs</text>
+    <text x="420" y="16" fill="#d69e2e">Stitching 1,200 pending</text>
+    <text x="545" y="16" fill="#b7791f">Part disp: 2,800 sent</text>
+  </g>
+
+  <!-- Row 4: Urgent Diwali run -->
+  <g transform="translate(60, 268)" font-size="12" fill="#1a202c">
+    <text x="10" y="16" font-weight="bold">#1411</text>
+    <text x="65" y="16">MedLife Diagnostics (Okhla)</text>
+    <text x="210" y="16">9x6x4" White Duplex box</text>
+    <text x="340" y="16">5,000 pcs</text>
+    <text x="420" y="16" fill="#805ad5">Printing pass 1 done</text>
+    <text x="545" y="16">Due tomorrow 4 PM</text>
+  </g>
+
+  <!-- Row 5: Blank details / phone order confusion -->
+  <g transform="translate(60, 308)" font-size="12" fill="#1a202c">
+    <text x="10" y="16" font-weight="bold">#1412</text>
+    <text x="65" y="16" fill="#718096">[Sharma ji pharma friend?]</text>
+    <text x="210" y="16">Master carton 7-ply</text>
+    <text x="340" y="16">500 pcs</text>
+    <text x="420" y="16" fill="#e53e3e">GSM confirm nahi hai</text>
+    <text x="545" y="16" fill="#718096">Party phone switch off</text>
+  </g>
+
+  <!-- Handwritten scribble at bottom -->
+  <g transform="translate(80, 375)">
+    <rect x="0" y="0" width="650" height="110" rx="6" fill="#feebc8" stroke="#dd6b20" stroke-width="1.5" />
+    <text x="15" y="24" font-size="13" font-weight="bold" fill="#7b341e">FIELD OBSERVATION NOTES (SOLUTIONS AUDIT):</text>
+    <text x="15" y="46" font-size="11.5" fill="#4a5568">• Job register is maintained solely by Dinesh (Supervisor) at the end of shift from memory + pocket chits.</text>
+    <text x="15" y="66" font-size="11.5" fill="#4a5568">• When Job #1409 was printed with the old plate, the mistake was discovered ONLY during bundle packing (8 hours wasted).</text>
+    <text x="15" y="86" font-size="11.5" fill="#4a5568">• Owner (Vikas) was on sales tour; had no visibility of reprint until paper supplier called for urgent reel re-order.</text>
+    <circle cx="620" cy="80" r="16" fill="#c53030" opacity="0.85" />
+    <text x="613" y="85" font-size="14" fill="#fff" font-weight="bold">!</text>
+  </g>
+</svg>

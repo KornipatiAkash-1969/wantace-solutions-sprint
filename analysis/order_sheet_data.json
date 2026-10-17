@@ -1,0 +1,45 @@
+{
+  "total_rows": 25,
+  "daily_rate": 3.57,
+  "projected_monthly_orders": 107.1,
+  "total_booked_value": 586317.0,
+  "dispatched_value": 322917.0,
+  "pending_value": 237200.0,
+  "hold_value": 26200.0,
+  "online_count": 3,
+  "online_pct_count": 12.0,
+  "online_value": 46192.0,
+  "online_pct_value": 7.88,
+  "status_counts": {
+    "dispatched": 12,
+    "pending": 7,
+    "pend": 2,
+    "hold - payment": 2,
+    "partly disp": 1,
+    "return": 1
+  },
+  "party_frequency": {
+    "Gupta Traders Ambala": 4,
+    "Sharma Bartan Bhandar Karnal": 4,
+    "New Delhi Steel House": 3,
+    "Jain Crockery Panipat": 3,
+    "Online - Kunal": 3,
+    "Bansal & Sons Rohtak": 3,
+    "[BLANK PARTY]": 1,
+    "Mehra Kitchenware Jalandhar": 2,
+    "Verma Utensils Sonipat": 2
+  },
+  "issues_detected": [
+    "Row 3: Potential duplicate/re-entry (Gupta Traders Ambala - repeat msg?)",
+    "Row 7: Held on payment dues (Sharma Bartan Bhandar Karnal - old dues 1.8L)",
+    "Row 8: Stuck in outsourced polishing (Bansal & Sons Rohtak - Tope No.6 - 120.0)",
+    "Row 9: Missing Party Name (20 dozen Thalis worth 12000.00)",
+    "Row 11: Potential duplicate/re-entry (Jain Crockery Panipat - again sent on whatsapp)",
+    "Row 13: Stuck in outsourced polishing (New Delhi Steel House - Bhagona 8L - 60.0)",
+    "Row 15: Stuck in outsourced polishing (Bansal & Sons Rohtak - Tope No.6 - 120.0)",
+    "Row 16: Return logged as negative quantity (-6.0 dozen)",
+    "Row 19: Stuck in outsourced polishing (Gupta Traders Ambala - Bhagona 8 ltr - 40.0)",
+    "Row 21: Missing Rate for Verma Utensils Sonipat (180.0 kg of Kadhai 10 no.)",
+    "Row 24: Held on payment dues (Sharma Bartan Bhandar Karnal - )"
+  ]
+}

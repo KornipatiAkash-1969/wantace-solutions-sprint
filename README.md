@@ -4,15 +4,27 @@
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2ea44f?style=flat-square&logo=github)](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)
+[![Netlify](https://img.shields.io/badge/Mirror-Netlify-00C7B7?style=flat-square&logo=netlify)](http://dulcet-phoenix-2e68c7.netlify.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
-> **Candidate Brief**: Solutions Engineer Sprint (48-Hour Assignment)  
+> **Candidate**: **Akash Kornipati** ([akash.kornipati1969@gmail.com](mailto:akash.kornipati1969@gmail.com))  
+> **Brief**: Solutions Engineer Sprint (48-Hour Assignment)  
 > **Reviewer**: @Nick & The Wantace Hiring Team  
 > **Date**: October 2026  
 > **Repository**: [https://github.com/KornipatiAkash-1969/wantace-solutions-sprint](https://github.com/KornipatiAkash-1969/wantace-solutions-sprint)  
-> **Live Production App**: [https://kornipatiakash-1969.github.io/wantace-solutions-sprint/](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)
+> **Primary Live URL**: [https://kornipatiakash-1969.github.io/wantace-solutions-sprint/](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)  
+> **Mirror Live URL**: [http://dulcet-phoenix-2e68c7.netlify.app](http://dulcet-phoenix-2e68c7.netlify.app)
 
 ---
+
+## 🚀 Live Deployments & Working App Links
+
+| Service | Live Deployment URL | Notes |
+| :--- | :--- | :--- |
+| 🌐 **GitHub Pages (Primary)** | **[https://kornipatiakash-1969.github.io/wantace-solutions-sprint/](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)** | Production build hosted directly from the `gh-pages` branch |
+| ⚡ **Netlify (Mirror CDN)** | **[http://dulcet-phoenix-2e68c7.netlify.app](http://dulcet-phoenix-2e68c7.netlify.app)** | Direct high-speed edge deployment |
+| ▲ **Vercel (1-Click Deploy)** | **[Deploy Repository to Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKornipatiAkash-1969%2Fwantace-solutions-sprint)** | Zero-config clone & deploy using `vercel.json` |
+| 💻 **Local Dev Server** | `http://localhost:5173/` | Vite 8 dev server running locally |
 
 ## 📌 Executive Summary
 
@@ -241,8 +253,10 @@ erDiagram
 
 A production-ready React.js application is included in `frontend/`.
 
-### 🌐 Live Production URL
-* **GitHub Pages Live App**: [https://kornipatiakash-1969.github.io/wantace-solutions-sprint/](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)
+### 🌐 Live Production URLs
+* **Primary (GitHub Pages)**: [https://kornipatiakash-1969.github.io/wantace-solutions-sprint/](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)
+* **Mirror (Netlify CDN)**: [http://dulcet-phoenix-2e68c7.netlify.app](http://dulcet-phoenix-2e68c7.netlify.app)
+* **1-Click Vercel Deploy**: [Deploy to Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKornipatiAkash-1969%2Fwantace-solutions-sprint)
 * **Local Dev Server**: `http://localhost:5173/`
 
 ### Tech Stack

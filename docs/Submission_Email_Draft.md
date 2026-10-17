@@ -20,8 +20,7 @@ This project reflects the real job in miniature: ground-level field observation 
   👉 **`https://github.com/KornipatiAkash-1969/wantace-solutions-sprint/blob/main/docs/Wantace_Solutions_Sprint_Master_Submission.md`**  
   *(A unified, professionally formatted document containing Part A Audit Notes & Evidence Photos, Part B Requirement Document with ER Diagrams & Process Maps, Part C AE Handoff Battlecard, and Part D Marketing Assets).*
 * **Interactive Live Working Prototype (Phase 1 Web App)**:  
-  👉 **`https://kornipatiakash-1969.github.io/wantace-solutions-sprint/`**  
-  *(Alternative Netlify Live Mirror: `http://dulcet-phoenix-2e68c7.netlify.app`)*
+  👉 **`https://kornipatiakash-1969.github.io/wantace-solutions-sprint/`**
 
 ---
 

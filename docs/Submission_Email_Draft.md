@@ -2,7 +2,7 @@
 
 **To**: solutions-sprint@wantace.com  
 **Cc**: nick@wantace.com  
-**Subject**: Submission: Solutions Engineer Sprint (48-Hour Assignment) — [Your Name]  
+**Subject**: Submission: Solutions Engineer Sprint (48-Hour Assignment) — Akash Kornipati  
 **Date**: 17 October 2026  
 
 ---
@@ -17,10 +17,11 @@ This project reflects the real job in miniature: ground-level field observation 
 
 ### 1. Master Assignment Deliverables (Parts A – D)
 * **Consolidated Master Document (PDF / Google Doc Link)**:  
-  👉 **`https://docs.google.com/document/d/1_VardhanSteelware_WantaceSprint_CandidateSubmission/edit?usp=sharing`**  
-  *(A unified, professionally formatted 8-page document containing Part A Audit Notes & Evidence Photos, Part B Requirement Document with ER Diagrams & Process Maps, Part C AE Handoff Battlecard, and Part D Marketing Assets).*
+  👉 **`https://github.com/KornipatiAkash-1969/wantace-solutions-sprint/blob/main/docs/Wantace_Solutions_Sprint_Master_Submission.md`**  
+  *(A unified, professionally formatted document containing Part A Audit Notes & Evidence Photos, Part B Requirement Document with ER Diagrams & Process Maps, Part C AE Handoff Battlecard, and Part D Marketing Assets).*
 * **Interactive Live Working Prototype (Phase 1 Web App)**:  
-  👉 **`https://wantace-vardhan-prototype.vercel.app`** *(or run locally via the attached repository)*
+  👉 **`https://kornipatiakash-1969.github.io/wantace-solutions-sprint/`**  
+  *(Alternative Netlify Live Mirror: `http://dulcet-phoenix-2e68c7.netlify.app`)*
 
 ---
 
@@ -67,6 +68,8 @@ I look forward to discussing the operational nuances, trade-offs, and architectu
 
 Warm regards,
 
-**[Candidate Name]**  
+**Akash Kornipati**  
 Solutions Engineer Intern Candidate  
-Phone: +91 98765 43210 | Portfolio: `https://github.com/candidate/wantace-solutions-sprint`
+Email: akash.kornipati1969@gmail.com  
+GitHub: [https://github.com/KornipatiAkash-1969/wantace-solutions-sprint](https://github.com/KornipatiAkash-1969/wantace-solutions-sprint)  
+Live Demo: [https://kornipatiakash-1969.github.io/wantace-solutions-sprint/](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)

@@ -3,12 +3,14 @@
 [![React 19](https://img.shields.io/badge/React-19.2-blue?style=flat-square&logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2ea44f?style=flat-square&logo=github)](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
 > **Candidate Brief**: Solutions Engineer Sprint (48-Hour Assignment)  
 > **Reviewer**: @Nick & The Wantace Hiring Team  
 > **Date**: October 2026  
-> **Repository**: [https://github.com/KornipatiAkash-1969/wantace-solutions-sprint](https://github.com/KornipatiAkash-1969/wantace-solutions-sprint)
+> **Repository**: [https://github.com/KornipatiAkash-1969/wantace-solutions-sprint](https://github.com/KornipatiAkash-1969/wantace-solutions-sprint)  
+> **Live Production App**: [https://kornipatiakash-1969.github.io/wantace-solutions-sprint/](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)
 
 ---
 
@@ -239,11 +241,16 @@ erDiagram
 
 A production-ready React.js application is included in `frontend/`.
 
+### 🌐 Live Production URL
+* **GitHub Pages Live App**: [https://kornipatiakash-1969.github.io/wantace-solutions-sprint/](https://kornipatiakash-1969.github.io/wantace-solutions-sprint/)
+* **Local Dev Server**: `http://localhost:5173/`
+
 ### Tech Stack
 * **Framework**: React 19 + Vite 8
 * **Styling**: Tailwind CSS + Custom Architectural Slate Palette
 * **Icons**: Lucide React
 * **State Management**: Reactive Hooks with live seed database
+* **Deployment Ready**: GitHub Actions CI/CD (`.github/workflows/deploy.yml`), GitHub Pages (`gh-pages`), Vercel (`vercel.json`), Netlify (`netlify.toml`).
 
 ### How to Run Locally
 
